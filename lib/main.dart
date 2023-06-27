@@ -93,8 +93,7 @@ class _GiphyAppState extends State<GiphyApp> {
               itemCount: _fetchedGifs.length + 1,
               itemBuilder: (context, index) {
                 if (index == _fetchedGifs.length) {
-                  // Showing a loading indicator if the GIF list is loading
-                  return const CircularProgressIndicator();
+                  return _buildLoadingIndicator();
                 } else {
                   // Adding some reshaping for the corresponding GIF
                   return _buildGifItem(_fetchedGifs[index]);
@@ -117,5 +116,15 @@ class _GiphyAppState extends State<GiphyApp> {
         errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
     );
+  }
+
+  Widget _buildLoadingIndicator() {
+    // Show a loading indicator widget if more GIFs are being loaded
+    return _isLoading
+        ? const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: CircularProgressIndicator(),
+          )
+        : Container();
   }
 }

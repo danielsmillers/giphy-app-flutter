@@ -21,6 +21,19 @@ class _GiphyAppState extends State<GiphyApp> {
   bool _isLoading = false;
   final ScrollController _scrollController = ScrollController();
 
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_scrollListener);
+  }
+
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   void _searchGifs(String query) {
     // Clear the existing fetched GIFs list and reset the offset
     setState(() {

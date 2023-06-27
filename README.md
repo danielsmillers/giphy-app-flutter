@@ -1,16 +1,16 @@
-# giphy_search
+# GiphyApp
 
-A new Flutter project.
+GiphyApp is a Flutter application that allows you to search and view GIFs using the Giphy API.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Search for GIFs based on keywords
+- Infinite scrolling to load more GIFs
+- Display GIFs in a grid layout
+- GIFs are fetched from the Giphy API
 
-A few resources to get you started if this is your first Flutter project:
+## Dependencies
+The app uses the following dependencies:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- flutter/material: Material design widgets for the UI
+- cached_network_image: Caches network images for efficient loading and display
